@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -20,10 +20,15 @@ const Layout = ({ children }) => {
     }
   `)
 
+  const [menuState, setMenuState] = useState(false)
+
   return (
     <div className="app">
-      <Header siteTitle={siteData.site.siteMetadata.title} />
-      <Menu />
+      <Header
+        setMenuState={setMenuState}
+        siteTitle={siteData.site.siteMetadata.title}
+      />
+      <Menu menuState={menuState} setMenuState={setMenuState} />
       <div>
         <main>{children}</main>
       </div>
