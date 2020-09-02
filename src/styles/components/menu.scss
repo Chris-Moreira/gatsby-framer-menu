@@ -48,7 +48,13 @@
               display: flex;
               align-items: flex-end;
               .title {
+                z-index: 10;
                 margin: 0 1rem;
+                &:hover {
+                  -webkit-text-fill-color: $white;
+                  -webkit-text-stroke-width: 1px;
+                  -webkit-text-stroke-color: $black;
+                }
                 h2 {
                   overflow: hidden;
                   margin: 0;
@@ -83,7 +89,6 @@
                 position: absolute;
                 z-index: 99;
                 overflow: hidden;
-                opacity: 0;
               }
             }
             .line {
