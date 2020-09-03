@@ -129,3 +129,15 @@ ul {
 .body-lock {
   overflow-y: hidden;
 }
+
+.cursor {
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  background: #e7dede;
+  border-radius: 100%;
+  pointer-events: none;
+}

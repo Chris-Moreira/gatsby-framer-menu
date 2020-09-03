@@ -35,7 +35,7 @@ const maskAnimation = {
   animate: { width: 0 },
 }
 
-const Menu = ({ menuState, setMenuState, x, y }) => {
+const Menu = ({ menuState, setMenuState, x, y, setCursorHovered }) => {
   return (
     <AnimatePresence>
       {menuState && (
@@ -47,7 +47,12 @@ const Menu = ({ menuState, setMenuState, x, y }) => {
             className="products"
           >
             <div className="menu-title">Products</div>
-            <div onClick={() => setMenuState(false)} className="close">
+            <div
+              onClick={() => setMenuState(false)}
+              onMouseEnter={() => setCursorHovered(true)}
+              onMouseLeave={() => setCursorHovered(false)}
+              className="close"
+            >
               <Close />
             </div>
             <div className="menu">
@@ -71,6 +76,7 @@ const Menu = ({ menuState, setMenuState, x, y }) => {
                         x={x}
                         y={y}
                         offset={list.offset}
+                        setCursorHovered={setCursorHovered}
                       />
                     ))}
                   </motion.ul>
@@ -95,6 +101,7 @@ const List = ({
   id,
   x,
   y,
+  setCursorHovered,
 }) => {
   let list = useRef()
   const [hoverState, setHoverState] = useState(false)
@@ -126,6 +133,8 @@ const List = ({
             className="title"
             onHoverStart={() => setHoverState(true)}
             onHoverEnd={() => setHoverState(false)}
+            onMouseEnter={() => setCursorHovered(true)}
+            onMouseLeave={() => setCursorHovered(false)}
           >
             <h2>
               <motion.div
