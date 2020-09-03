@@ -60,6 +60,9 @@
                   margin: 0;
                   font-size: 4rem;
                   font-weight: 500;
+                  @media (max-width: 768px) {
+                    font-size: 1.5rem;
+                  }
                 }
               }
               .thumbnail {
@@ -69,6 +72,9 @@
                 left: 30rem;
                 width: 7.6rem;
                 height: 5rem;
+                @media (max-width: 768px) {
+                  display: none;
+                }
                 .mask {
                   background: $white;
                   width: 100%;
@@ -89,6 +95,9 @@
                 position: absolute;
                 z-index: 99;
                 overflow: hidden;
+                @media (max-width: 768px) {
+                  display: none;
+                }
               }
             }
             .line {

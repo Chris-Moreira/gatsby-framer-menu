@@ -14,8 +14,13 @@ const Header = ({ setMenuState, setCursorHovered }) => {
     <header>
       <div className="container fluid">
         <div className="header-inner">
-          <Link activeClassName="active" to="/">
-            Pocket.
+          <Link
+            activeClassName="active"
+            to="/"
+            onMouseEnter={() => setCursorHovered(true)}
+            onMouseLeave={() => setCursorHovered(false)}
+          >
+            Chris's Crepes.
           </Link>
           <div
             onClick={() => setMenuState(true)}

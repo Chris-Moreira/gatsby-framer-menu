@@ -9,7 +9,6 @@
     align-items: center;
     .main-headline {
       font-weight: 400;
-      line-height: 10rem;
       font-size: 12rem;
       color: #fff;
       mix-blend-mode: difference;
@@ -20,6 +19,9 @@
       text-align: center;
       top: 50%;
       transform: translateY(-50%);
+      @media (max-width: 768px) {
+        font-size: 3rem;
+      }
       span.semi-bold {
         font-weight: 400;
         &:hover {
@@ -34,7 +36,7 @@
       }
     }
     .image {
-      width: 1000px;
+      max-width: 1000px;
       margin: 0 auto;
 
       img {
